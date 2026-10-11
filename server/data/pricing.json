@@ -1,0 +1,1133 @@
+{
+  "meta": {
+    "usdToCny": 6.7,
+    "rateDate": "2026-10-06",
+    "lastUpdated": "2026-10-08",
+    "rateNote": "汇率手填，不自动更新；改动后全站数值实时重算。",
+    "disclaimer": "价格来自各供应商官方公开页面，人工录入，可能滞后或有误，请以官方页面为准。本站与所列厂商均无隶属关系。"
+  },
+  "priceKinds": [
+    {
+      "id": "input_cache_hit",
+      "label": "输入·命中缓存",
+      "short": "命中"
+    },
+    {
+      "id": "input_cache_miss",
+      "label": "输入·未命中",
+      "short": "未命中"
+    },
+    {
+      "id": "output",
+      "label": "输出",
+      "short": "输出"
+    }
+  ],
+  "providers": [
+    {
+      "id": "deepseek",
+      "name": "DeepSeek",
+      "kind": "official-api",
+      "tag": "官方 API",
+      "sourceUrl": "https://api-docs.deepseek.com/quick_start/pricing",
+      "lastChecked": "2026-10-07",
+      "note": "只有官方按量 API，没有订阅套餐。低谷价（off-peak）为峰时价的一半，此处统一取低谷价。",
+      "models": [
+        {
+          "id": "deepseek-flash",
+          "name": "DeepSeek V4.1 Flash",
+          "prices": [
+            {
+              "kind": "input_cache_hit",
+              "amount": 0.003,
+              "currency": "USD"
+            },
+            {
+              "kind": "input_cache_miss",
+              "amount": 0.15,
+              "currency": "USD"
+            },
+            {
+              "kind": "output",
+              "amount": 0.6,
+              "currency": "USD"
+            }
+          ]
+        },
+        {
+          "id": "deepseek-v4-pro",
+          "name": "DeepSeek V4 Pro",
+          "prices": [
+            {
+              "kind": "input_cache_hit",
+              "amount": 0.022,
+              "currency": "USD"
+            },
+            {
+              "kind": "input_cache_miss",
+              "amount": 0.66,
+              "currency": "USD"
+            },
+            {
+              "kind": "output",
+              "amount": 1.98,
+              "currency": "USD"
+            }
+          ]
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI",
+      "kind": "official-api",
+      "tag": "官方 API",
+      "sourceUrl": "https://platform.openai.com/docs/pricing",
+      "lastChecked": "2026-10-07",
+      "models": [
+        {
+          "id": "gpt-5.5-pro",
+          "name": "GPT-5.5 Pro",
+          "prices": [
+            {
+              "kind": "input_cache_miss",
+              "amount": 30.0,
+              "currency": "USD"
+            },
+            {
+              "kind": "output",
+              "amount": 180.0,
+              "currency": "USD"
+            }
+          ],
+          "note": "最贵档；取自 OpenRouter 挂牌价"
+        },
+        {
+          "id": "gpt-5.6-terra",
+          "name": "GPT-5.6 Terra",
+          "prices": [
+            {
+              "kind": "input_cache_hit",
+              "amount": 0.2,
+              "currency": "USD"
+            },
+            {
+              "kind": "input_cache_miss",
+              "amount": 2.0,
+              "currency": "USD"
+            },
+            {
+              "kind": "output",
+              "amount": 12.0,
+              "currency": "USD"
+            }
+          ],
+          "note": "主力档"
+        },
+        {
+          "id": "gpt-6-luna",
+          "name": "GPT-6 Luna",
+          "prices": [
+            {
+              "kind": "input_cache_hit",
+              "amount": 0.01,
+              "currency": "USD"
+            },
+            {
+              "kind": "input_cache_miss",
+              "amount": 0.1,
+              "currency": "USD"
+            },
+            {
+              "kind": "output",
+              "amount": 0.5,
+              "currency": "USD"
+            }
+          ],
+          "note": "最便宜档"
+        }
+      ],
+      "note": "取自 OpenRouter 模型库 /api/v1/models 的上游挂牌价（美元/1M token）；未与各家官方定价页逐条核对。",
+      "verified": false
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic",
+      "kind": "official-api",
+      "tag": "官方 API",
+      "sourceUrl": "https://docs.anthropic.com/en/docs/about-claude/pricing",
+      "lastChecked": "2026-10-07",
+      "models": [
+        {
+          "id": "claude-fable-5",
+          "name": "Claude Fable 5",
+          "prices": [
+            {
+              "kind": "input_cache_hit",
+              "amount": 1.0,
+              "currency": "USD"
+            },
+            {
+              "kind": "input_cache_miss",
+              "amount": 10.0,
+              "currency": "USD"
+            },
+            {
+              "kind": "output",
+              "amount": 50.0,
+              "currency": "USD"
+            }
+          ],
+          "note": "超旗舰档"
+        },
+        {
+          "id": "claude-sonnet-5.5",
+          "name": "Claude Sonnet 5.5",
+          "prices": [
+            {
+              "kind": "input_cache_hit",
+              "amount": 0.2,
+              "currency": "USD"
+            },
+            {
+              "kind": "input_cache_miss",
+              "amount": 2.0,
+              "currency": "USD"
+            },
+            {
+              "kind": "output",
+              "amount": 10.0,
+              "currency": "USD"
+            }
+          ],
+          "note": "主力档"
+        },
+        {
+          "id": "claude-haiku-4.5",
+          "name": "Claude Haiku 4.5",
+          "prices": [
+            {
+              "kind": "input_cache_hit",
+              "amount": 0.1,
+              "currency": "USD"
+            },
+            {
+              "kind": "input_cache_miss",
+              "amount": 1.0,
+              "currency": "USD"
+            },
+            {
+              "kind": "output",
+              "amount": 5.0,
+              "currency": "USD"
+            }
+          ],
+          "note": "轻量档"
+        }
+      ],
+      "note": "取自 OpenRouter 模型库 /api/v1/models 的上游挂牌价（美元/1M token）；未与各家官方定价页逐条核对。",
+      "verified": false
+    },
+    {
+      "id": "gemini",
+      "name": "Google Gemini",
+      "kind": "official-api",
+      "tag": "官方 API",
+      "sourceUrl": "https://ai.google.dev/gemini-api/docs/pricing",
+      "lastChecked": "2026-10-07",
+      "models": [
+        {
+          "id": "gemini-3.1-pro-preview",
+          "name": "Gemini 3.1 Pro",
+          "prices": [
+            {
+              "kind": "input_cache_hit",
+              "amount": 0.2,
+              "currency": "USD"
+            },
+            {
+              "kind": "input_cache_miss",
+              "amount": 2.0,
+              "currency": "USD"
+            },
+            {
+              "kind": "output",
+              "amount": 12.0,
+              "currency": "USD"
+            }
+          ],
+          "note": "旗舰档"
+        },
+        {
+          "id": "gemini-3.8-flash",
+          "name": "Gemini 3.8 Flash",
+          "prices": [
+            {
+              "kind": "input_cache_hit",
+              "amount": 0.075,
+              "currency": "USD"
+            },
+            {
+              "kind": "input_cache_miss",
+              "amount": 0.75,
+              "currency": "USD"
+            },
+            {
+              "kind": "output",
+              "amount": 3.75,
+              "currency": "USD"
+            }
+          ],
+          "note": "主力档"
+        },
+        {
+          "id": "gemini-2.5-flash-lite",
+          "name": "Gemini 2.5 Flash-Lite",
+          "prices": [
+            {
+              "kind": "input_cache_hit",
+              "amount": 0.01,
+              "currency": "USD"
+            },
+            {
+              "kind": "input_cache_miss",
+              "amount": 0.1,
+              "currency": "USD"
+            },
+            {
+              "kind": "output",
+              "amount": 0.4,
+              "currency": "USD"
+            }
+          ],
+          "note": "最便宜档"
+        }
+      ],
+      "note": "取自 OpenRouter 模型库 /api/v1/models 的上游挂牌价（美元/1M token）；未与各家官方定价页逐条核对。",
+      "verified": false
+    },
+    {
+      "id": "mistral",
+      "name": "Mistral",
+      "kind": "official-api",
+      "tag": "官方 API",
+      "sourceUrl": "https://mistral.ai/pricing",
+      "lastChecked": "2026-10-07",
+      "models": [
+        {
+          "id": "mistral-medium-3.5",
+          "name": "Mistral Medium 3.5",
+          "prices": [
+            {
+              "kind": "input_cache_miss",
+              "amount": 1.5,
+              "currency": "USD"
+            },
+            {
+              "kind": "output",
+              "amount": 7.5,
+              "currency": "USD"
+            }
+          ],
+          "note": "旗舰档"
+        },
+        {
+          "id": "mistral-large-2512",
+          "name": "Mistral Large 2512",
+          "prices": [
+            {
+              "kind": "input_cache_hit",
+              "amount": 0.05,
+              "currency": "USD"
+            },
+            {
+              "kind": "input_cache_miss",
+              "amount": 0.5,
+              "currency": "USD"
+            },
+            {
+              "kind": "output",
+              "amount": 1.5,
+              "currency": "USD"
+            }
+          ],
+          "note": "主力档"
+        },
+        {
+          "id": "mistral-small-2603",
+          "name": "Mistral Small 2603",
+          "prices": [
+            {
+              "kind": "input_cache_hit",
+              "amount": 0.015,
+              "currency": "USD"
+            },
+            {
+              "kind": "input_cache_miss",
+              "amount": 0.15,
+              "currency": "USD"
+            },
+            {
+              "kind": "output",
+              "amount": 0.6,
+              "currency": "USD"
+            }
+          ],
+          "note": "轻量档"
+        }
+      ],
+      "verified": false,
+      "note": "取自 OpenRouter 模型库 /api/v1/models 的上游挂牌价（美元/1M token）；未与各家官方定价页逐条核对。"
+    },
+    {
+      "id": "qwen",
+      "name": "通义千问 Qwen",
+      "kind": "official-api",
+      "tag": "官方 API",
+      "sourceUrl": "https://help.aliyun.com/zh/model-studio/models",
+      "lastChecked": "2026-10-07",
+      "models": [
+        {
+          "id": "qwen3.8-max",
+          "name": "Qwen3.8 Max",
+          "prices": [
+            {
+              "kind": "input_cache_miss",
+              "amount": 12.0,
+              "currency": "CNY"
+            },
+            {
+              "kind": "output",
+              "amount": 36.0,
+              "currency": "CNY"
+            }
+          ],
+          "note": "阶梯计价 0<Token≤1M；缓存命中按标准输入 10% 计"
+        },
+        {
+          "id": "qwen3.7-plus",
+          "name": "Qwen3.7 Plus",
+          "prices": [
+            {
+              "kind": "input_cache_miss",
+              "amount": 2.0,
+              "currency": "CNY"
+            },
+            {
+              "kind": "output",
+              "amount": 8.0,
+              "currency": "CNY"
+            }
+          ],
+          "note": "0<Token≤256K；限时另有折扣"
+        },
+        {
+          "id": "qwen-plus",
+          "name": "Qwen Plus",
+          "prices": [
+            {
+              "kind": "input_cache_miss",
+              "amount": 0.8,
+              "currency": "CNY"
+            },
+            {
+              "kind": "output",
+              "amount": 2.0,
+              "currency": "CNY"
+            }
+          ],
+          "note": "0<Token≤128K；另有 ¥8 高价档"
+        }
+      ],
+      "note": "阿里云百炼官方定价，人民币。部分模型阶梯计价，此处取最低档。",
+      "verified": true
+    },
+    {
+      "id": "zhipu",
+      "name": "智谱 GLM",
+      "kind": "official-api",
+      "tag": "官方 API",
+      "sourceUrl": "https://open.bigmodel.cn/pricing",
+      "lastChecked": "2026-10-07",
+      "models": [
+        {
+          "id": "glm-5.3",
+          "name": "GLM-5.3",
+          "prices": [
+            {
+              "kind": "input_cache_hit",
+              "amount": 2.0,
+              "currency": "CNY"
+            },
+            {
+              "kind": "input_cache_miss",
+              "amount": 8.0,
+              "currency": "CNY"
+            },
+            {
+              "kind": "output",
+              "amount": 28.0,
+              "currency": "CNY"
+            }
+          ],
+          "note": "上下文 1M；缓存存储限时免费"
+        },
+        {
+          "id": "glm-5.3-flash",
+          "name": "GLM-5.3-Flash",
+          "prices": [
+            {
+              "kind": "input_cache_hit",
+              "amount": 0.23,
+              "currency": "CNY"
+            },
+            {
+              "kind": "input_cache_miss",
+              "amount": 0.8,
+              "currency": "CNY"
+            },
+            {
+              "kind": "output",
+              "amount": 2.8,
+              "currency": "CNY"
+            }
+          ],
+          "note": "原生多模态；上下文 1M"
+        }
+      ],
+      "note": "官方定价以人民币计价。缓存存储限时免费。",
+      "verified": true
+    },
+    {
+      "id": "moonshot",
+      "name": "月之暗面 Kimi",
+      "kind": "official-api",
+      "tag": "官方 API",
+      "sourceUrl": "https://platform.moonshot.cn/docs/pricing/chat",
+      "lastChecked": "2026-10-07",
+      "models": [
+        {
+          "id": "kimi-k3",
+          "name": "Kimi K3",
+          "prices": [
+            {
+              "kind": "input_cache_hit",
+              "amount": 2.0,
+              "currency": "CNY"
+            },
+            {
+              "kind": "input_cache_miss",
+              "amount": 20.0,
+              "currency": "CNY"
+            },
+            {
+              "kind": "output",
+              "amount": 100.0,
+              "currency": "CNY"
+            }
+          ],
+          "note": "上下文 1,048,576；缓存写入另计 TTL5min ¥20 / TTL1h ¥40"
+        },
+        {
+          "id": "kimi-k2.7-code",
+          "name": "Kimi K2.7 Code",
+          "prices": [
+            {
+              "kind": "input_cache_hit",
+              "amount": 1.3,
+              "currency": "CNY"
+            },
+            {
+              "kind": "input_cache_miss",
+              "amount": 6.5,
+              "currency": "CNY"
+            },
+            {
+              "kind": "output",
+              "amount": 27.0,
+              "currency": "CNY"
+            }
+          ],
+          "note": "上下文 262,144"
+        },
+        {
+          "id": "kimi-k2.6",
+          "name": "Kimi K2.6",
+          "prices": [
+            {
+              "kind": "input_cache_hit",
+              "amount": 1.1,
+              "currency": "CNY"
+            },
+            {
+              "kind": "input_cache_miss",
+              "amount": 6.5,
+              "currency": "CNY"
+            },
+            {
+              "kind": "output",
+              "amount": 27.0,
+              "currency": "CNY"
+            }
+          ],
+          "note": "上下文 262,144"
+        }
+      ],
+      "note": "官方定价以人民币计价，按 1M token 计费单位。",
+      "verified": true
+    },
+    {
+      "id": "openrouter",
+      "name": "OpenRouter",
+      "kind": "aggregator",
+      "tag": "聚合 · 约 +5.5%",
+      "markupPct": 5.5,
+      "sourceUrl": "https://openrouter.ai/pricing",
+      "lastChecked": "2026-10-08",
+      "note": "聚合平台。挂牌价与各家官方直连相同，此处额外计入 5.5% 平台费（Standard 档，购买额度时收取），所以上表数字会略高于直连——换来的是「一个 key 调所有模型」。",
+      "models": [
+        {
+          "id": "google/gemini-2.5-flash-lite",
+          "name": "Gemini 2.5 Flash-Lite",
+          "prices": [
+            {
+              "kind": "input_cache_hit",
+              "amount": 0.01,
+              "currency": "USD"
+            },
+            {
+              "kind": "input_cache_miss",
+              "amount": 0.1,
+              "currency": "USD"
+            },
+            {
+              "kind": "output",
+              "amount": 0.4,
+              "currency": "USD"
+            }
+          ],
+          "note": "与 Google 直连同价；上表数字已含 5.5% 平台费"
+        },
+        {
+          "id": "anthropic/claude-haiku-4.5",
+          "name": "Claude Haiku 4.5",
+          "prices": [
+            {
+              "kind": "input_cache_hit",
+              "amount": 0.1,
+              "currency": "USD"
+            },
+            {
+              "kind": "input_cache_miss",
+              "amount": 1.0,
+              "currency": "USD"
+            },
+            {
+              "kind": "output",
+              "amount": 5.0,
+              "currency": "USD"
+            }
+          ],
+          "note": "与 Anthropic 直连同价；已含平台费"
+        },
+        {
+          "id": "mistralai/mistral-small-2603",
+          "name": "Mistral Small 2603",
+          "prices": [
+            {
+              "kind": "input_cache_hit",
+              "amount": 0.015,
+              "currency": "USD"
+            },
+            {
+              "kind": "input_cache_miss",
+              "amount": 0.15,
+              "currency": "USD"
+            },
+            {
+              "kind": "output",
+              "amount": 0.6,
+              "currency": "USD"
+            }
+          ],
+          "note": "与 Mistral 直连同价；已含平台费"
+        },
+        {
+          "id": "openai/gpt-6-luna",
+          "name": "GPT-6 Luna",
+          "prices": [
+            {
+              "kind": "input_cache_hit",
+              "amount": 0.01,
+              "currency": "USD"
+            },
+            {
+              "kind": "input_cache_miss",
+              "amount": 0.1,
+              "currency": "USD"
+            },
+            {
+              "kind": "output",
+              "amount": 0.5,
+              "currency": "USD"
+            }
+          ],
+          "note": "与 OpenAI 直连同价；已含平台费"
+        }
+      ],
+      "verified": false
+    }
+  ],
+  "plans": [
+    {
+      "id": "opencode-go",
+      "vendorName": "OpenCode",
+      "name": "OpenCode Go",
+      "price": {
+        "amount": 10,
+        "currency": "USD",
+        "period": "month"
+      },
+      "sourceUrl": "https://opencode.ai/go",
+      "lastChecked": "2026-10-07",
+      "note": "订阅制，官方不按 token 计价；额度以「每 5 小时估算请求数」与「每月用量（美元）」表示。",
+      "limits": [
+        {
+          "model": "Kimi K3",
+          "reqPer5h": 110,
+          "monthlyUsageUsd": 15
+        },
+        {
+          "model": "Kimi K2.7 Code",
+          "reqPer5h": 1350,
+          "monthlyUsageUsd": 60
+        },
+        {
+          "model": "Space Bunny",
+          "reqPer5h": 3130,
+          "monthlyUsageUsd": 30
+        },
+        {
+          "model": "MiniMax M3",
+          "reqPer5h": 3200,
+          "monthlyUsageUsd": 60
+        },
+        {
+          "model": "GPT 6 Luna",
+          "reqPer5h": 4230,
+          "monthlyUsageUsd": 15
+        },
+        {
+          "model": "Qwen3.7 Plus",
+          "reqPer5h": 4300,
+          "monthlyUsageUsd": 60
+        },
+        {
+          "model": "GLM-5.3-Flash",
+          "reqPer5h": 6320,
+          "monthlyUsageUsd": 60
+        },
+        {
+          "model": "DeepSeek V4.1 Flash",
+          "reqPer5h": 26000,
+          "monthlyUsageUsd": 60
+        },
+        {
+          "model": "MiMo-V2.6-Flash",
+          "reqPer5h": 30100,
+          "monthlyUsageUsd": 60
+        },
+        {
+          "model": "Muse Spark 1.3",
+          "reqPer5h": 45300,
+          "monthlyUsageUsd": 60
+        },
+        {
+          "model": "LongCat 2.5 Preview",
+          "reqPer5h": null,
+          "monthlyUsageUsd": null,
+          "free": true
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": "opencode-go-plus",
+      "vendorName": "OpenCode",
+      "name": "OpenCode Go Plus",
+      "price": {
+        "amount": 40,
+        "currency": "USD",
+        "period": "month"
+      },
+      "sourceUrl": "https://opencode.ai/go",
+      "lastChecked": "2026-10-07",
+      "note": "Go 的高额度档；额度口径与 Go 相同。",
+      "limits": [
+        {
+          "model": "Kimi K3",
+          "reqPer5h": 440,
+          "monthlyUsageUsd": 60
+        },
+        {
+          "model": "Kimi K2.7 Code",
+          "reqPer5h": 4050,
+          "monthlyUsageUsd": 180
+        },
+        {
+          "model": "Space Bunny",
+          "reqPer5h": 12500,
+          "monthlyUsageUsd": 120
+        },
+        {
+          "model": "MiniMax M3",
+          "reqPer5h": 9600,
+          "monthlyUsageUsd": 180
+        },
+        {
+          "model": "GPT 6 Luna",
+          "reqPer5h": 16920,
+          "monthlyUsageUsd": 60
+        },
+        {
+          "model": "Qwen3.7 Plus",
+          "reqPer5h": 12900,
+          "monthlyUsageUsd": 180
+        },
+        {
+          "model": "GLM-5.3-Flash",
+          "reqPer5h": 18960,
+          "monthlyUsageUsd": 180
+        },
+        {
+          "model": "DeepSeek V4.1 Flash",
+          "reqPer5h": 52000,
+          "monthlyUsageUsd": 120
+        },
+        {
+          "model": "MiMo-V2.6-Flash",
+          "reqPer5h": 60200,
+          "monthlyUsageUsd": 120
+        },
+        {
+          "model": "Muse Spark 1.3",
+          "reqPer5h": 90600,
+          "monthlyUsageUsd": 120
+        },
+        {
+          "model": "LongCat 2.5 Preview",
+          "reqPer5h": null,
+          "monthlyUsageUsd": null,
+          "free": true
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": "zhipu-lite",
+      "vendorName": "智谱",
+      "name": "GLM Coding Plan · Lite",
+      "price": {
+        "amount": 94.4,
+        "currency": "CNY",
+        "period": "month"
+      },
+      "listPrice": 118,
+      "quota": {
+        "amount": 10000,
+        "unit": "credits",
+        "period": "week"
+      },
+      "sourceUrl": "https://open.bigmodel.cn/",
+      "lastChecked": "2026-10-07",
+      "note": "连续包月价；标价 ¥118/月。连续包季 8 折、连续包年 7 折。额度单位是积分，非 token。支持 ZCode/Claude Code/Codex 等 20+ 工具。",
+      "limits": [],
+      "verified": true
+    },
+    {
+      "id": "zhipu-pro",
+      "vendorName": "智谱",
+      "name": "GLM Coding Plan · Pro",
+      "price": {
+        "amount": 430.4,
+        "currency": "CNY",
+        "period": "month"
+      },
+      "listPrice": 538,
+      "quota": {
+        "amount": 60000,
+        "unit": "credits",
+        "period": "week"
+      },
+      "sourceUrl": "https://open.bigmodel.cn/",
+      "lastChecked": "2026-10-07",
+      "note": "连续包月价；标价 ¥538/月。额度为 Lite 的 6 倍（10,000 × 6）。",
+      "limits": [],
+      "verified": true
+    },
+    {
+      "id": "zhipu-max",
+      "vendorName": "智谱",
+      "name": "GLM Coding Plan · Max",
+      "price": {
+        "amount": 862.4,
+        "currency": "CNY",
+        "period": "month"
+      },
+      "listPrice": 1078,
+      "quota": {
+        "amount": 140000,
+        "unit": "credits",
+        "period": "week"
+      },
+      "sourceUrl": "https://open.bigmodel.cn/",
+      "lastChecked": "2026-10-07",
+      "note": "连续包月价；标价 ¥1078/月。额度为 Lite 的 14 倍（10,000 × 14）。",
+      "limits": [],
+      "verified": true
+    },
+    {
+      "id": "qwen-token-lite",
+      "vendorName": "阿里云百炼",
+      "name": "Token Plan · Lite",
+      "price": {
+        "amount": 39,
+        "currency": "CNY",
+        "period": "month"
+      },
+      "listPrice": 60,
+      "quota": {
+        "amount": 11500,
+        "unit": "credits",
+        "period": "month"
+      },
+      "sourceUrl": "https://help.aliyun.com/zh/model-studio/token-plan-overview",
+      "lastChecked": "2026-10-08",
+      "note": "以 Credits 统一抵扣，一份订阅可在 Claude Code / Cursor / Qwen Code / Codex / Qoder 等工具中使用。仅支持华北2（北京）地域。",
+      "limits": [],
+      "verified": true
+    },
+    {
+      "id": "qwen-token-essential",
+      "vendorName": "阿里云百炼",
+      "name": "Token Plan · Essential",
+      "price": {
+        "amount": 79,
+        "currency": "CNY",
+        "period": "month"
+      },
+      "listPrice": 120,
+      "quota": {
+        "amount": 25500,
+        "unit": "credits",
+        "period": "month"
+      },
+      "sourceUrl": "https://help.aliyun.com/zh/model-studio/token-plan-overview",
+      "lastChecked": "2026-10-08",
+      "note": "以 Credits 统一抵扣，一份订阅可在 Claude Code / Cursor / Qwen Code / Codex / Qoder 等工具中使用。仅支持华北2（北京）地域。",
+      "limits": [],
+      "verified": true
+    },
+    {
+      "id": "qwen-token-standard",
+      "vendorName": "阿里云百炼",
+      "name": "Token Plan · Standard",
+      "price": {
+        "amount": 139,
+        "currency": "CNY",
+        "period": "month"
+      },
+      "listPrice": 180,
+      "quota": {
+        "amount": 45000,
+        "unit": "credits",
+        "period": "month"
+      },
+      "sourceUrl": "https://help.aliyun.com/zh/model-studio/token-plan-overview",
+      "lastChecked": "2026-10-08",
+      "note": "以 Credits 统一抵扣，一份订阅可在 Claude Code / Cursor / Qwen Code / Codex / Qoder 等工具中使用。仅支持华北2（北京）地域。",
+      "limits": [],
+      "verified": true
+    },
+    {
+      "id": "qwen-token-pro",
+      "vendorName": "阿里云百炼",
+      "name": "Token Plan · Pro",
+      "price": {
+        "amount": 499,
+        "currency": "CNY",
+        "period": "month"
+      },
+      "listPrice": 600,
+      "quota": {
+        "amount": 180000,
+        "unit": "credits",
+        "period": "month"
+      },
+      "sourceUrl": "https://help.aliyun.com/zh/model-studio/token-plan-overview",
+      "lastChecked": "2026-10-08",
+      "note": "以 Credits 统一抵扣，一份订阅可在 Claude Code / Cursor / Qwen Code / Codex / Qoder 等工具中使用。仅支持华北2（北京）地域。",
+      "limits": [],
+      "verified": true
+    },
+    {
+      "id": "workbuddy-free",
+      "vendorName": "腾讯",
+      "name": "WorkBuddy 体验版",
+      "price": {
+        "amount": 0,
+        "currency": "CNY",
+        "period": "month"
+      },
+      "quota": {
+        "amount": 500,
+        "unit": "credits",
+        "period": "month"
+      },
+      "sourceUrl": "https://www.workbuddy.cn/pricing",
+      "lastChecked": "2026-10-08",
+      "note": "限时免费，有效期 1 个月。",
+      "limits": [],
+      "verified": true
+    },
+    {
+      "id": "workbuddy-standard",
+      "vendorName": "腾讯",
+      "name": "WorkBuddy 标准版",
+      "price": {
+        "amount": 70,
+        "currency": "CNY",
+        "period": "month"
+      },
+      "quota": {
+        "amount": 4000,
+        "unit": "credits",
+        "period": "month"
+      },
+      "sourceUrl": "https://www.workbuddy.cn/pricing",
+      "lastChecked": "2026-10-08",
+      "note": "每月基础 2,000 + 赠送 2,000 积分。",
+      "limits": [],
+      "listPrice": 99,
+      "verified": true
+    },
+    {
+      "id": "workbuddy-advanced",
+      "vendorName": "腾讯",
+      "name": "WorkBuddy 高级版",
+      "price": {
+        "amount": 140,
+        "currency": "CNY",
+        "period": "month"
+      },
+      "quota": {
+        "amount": 9000,
+        "unit": "credits",
+        "period": "month"
+      },
+      "sourceUrl": "https://www.workbuddy.cn/pricing",
+      "lastChecked": "2026-10-08",
+      "note": "每月基础 4,000 + 赠送 5,000 积分。",
+      "limits": [],
+      "listPrice": 199,
+      "verified": true
+    },
+    {
+      "id": "workbuddy-flagship",
+      "vendorName": "腾讯",
+      "name": "WorkBuddy 旗舰版",
+      "price": {
+        "amount": 700,
+        "currency": "CNY",
+        "period": "month"
+      },
+      "quota": {
+        "amount": 50000,
+        "unit": "credits",
+        "period": "month"
+      },
+      "sourceUrl": "https://www.workbuddy.cn/pricing",
+      "lastChecked": "2026-10-08",
+      "note": "每月基础 20,000 + 赠送 30,000 积分。",
+      "limits": [],
+      "listPrice": 999,
+      "verified": true
+    },
+    {
+      "id": "claude-pro",
+      "vendorName": "Anthropic",
+      "name": "Claude Pro",
+      "price": {
+        "amount": 20,
+        "currency": "USD",
+        "period": "month"
+      },
+      "sourceUrl": "https://www.anthropic.com/pricing",
+      "lastChecked": "2026-10-08",
+      "note": "Claude Code 最低官方订阅入口。年付 $200。官方不公布 token 额度。",
+      "verified": false,
+      "limits": []
+    },
+    {
+      "id": "claude-max-5x",
+      "vendorName": "Anthropic",
+      "name": "Claude Max 5x",
+      "price": {
+        "amount": 100,
+        "currency": "USD",
+        "period": "month"
+      },
+      "sourceUrl": "https://www.anthropic.com/pricing",
+      "lastChecked": "2026-10-08",
+      "note": "Pro 的 5 倍用量档。官方不公布 token 额度。",
+      "verified": false,
+      "limits": []
+    },
+    {
+      "id": "claude-max-20x",
+      "vendorName": "Anthropic",
+      "name": "Claude Max 20x",
+      "price": {
+        "amount": 200,
+        "currency": "USD",
+        "period": "month"
+      },
+      "sourceUrl": "https://www.anthropic.com/pricing",
+      "lastChecked": "2026-10-08",
+      "note": "Pro 的 20 倍用量档。官方不公布 token 额度。",
+      "verified": false,
+      "limits": []
+    },
+    {
+      "id": "volcengine-lite",
+      "vendorName": "火山引擎",
+      "name": "方舟 Coding Plan · Lite",
+      "price": {
+        "amount": 40,
+        "currency": "CNY",
+        "period": "month"
+      },
+      "sourceUrl": "https://www.volcengine.com/docs/82379/1925115",
+      "lastChecked": "2026-10-08",
+      "verified": false,
+      "note": "官方原价 ¥40/月；限时活动价 ¥9.9/月（有期限与次数限制）。适合中等强度开发任务。 官方活动页价格需登录，未能直接核对；来源为豆包检索（引用官方文档）+ 第三方一致。",
+      "limits": []
+    },
+    {
+      "id": "volcengine-pro",
+      "vendorName": "火山引擎",
+      "name": "方舟 Coding Plan · Pro",
+      "price": {
+        "amount": 200,
+        "currency": "CNY",
+        "period": "month"
+      },
+      "sourceUrl": "https://www.volcengine.com/docs/82379/1925115",
+      "lastChecked": "2026-10-08",
+      "verified": false,
+      "note": "官方原价 ¥200/月；限时活动价 ¥49.9/月。用量为 Lite 的 5 倍，适合高强度开发任务。 官方活动页价格需登录，未能直接核对；来源为豆包检索（引用官方文档）+ 第三方一致。",
+      "limits": []
+    }
+  ]
+}

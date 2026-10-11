@@ -1,0 +1,58 @@
+# Logs
+logs
+*.log
+*.err
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# 环境变量：请勿提交真实密钥
+.env
+.env.*
+!.env.example
+
+# 由脚本生成的 AI 生图产物（保留目录结构）
+generated/
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# 本机运行时数据：账本里存着明文 key，画坊历史是你的生成记录，都不进仓库。
+# 牌价数据（server/data/pricing.json）是站点内容，要保留，所以它是这条规则里的例外。
+server/data/*
+!server/data/pricing.json
+
+# 移动端改造的临时产物：改动前的原文件备份、对照站点、验收截图
+.backup/
+.mobile-audit/
+
+# 「单机版」静态产物（GitHub Pages 部署用，由 npm run build:pages 生成）
+dist-pages/
+
+# .env.pages 是构建配置、不含密钥，需要提交（.env.* 的通配在它前面）
+!.env.pages
+
+# 根目录的一次性脚本 / 临时文件（scripts/ 目录里的工具不受影响）
+/_probe-*.mjs
+/.tmp-*
+
+# 只留本地、不上传：
+#   AGENTS.md               —— 编码代理用的项目约定，不公开
+#   hero-holo.png（2.1MB）  —— 页面用的是同名 .webp，这张 png 全项目无人引用
+/AGENTS.md
+/public/art/hero-holo.png

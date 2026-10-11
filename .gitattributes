@@ -1,0 +1,9 @@
+# 文本文件统一在仓库里按 LF 存储（检出时按平台习惯，不强制，
+# 这样 Windows 上 core.autocrlf=true 与 prettier 的 endOfLine: lf 不会互相打架）
+* text=auto
+
+# 图片一律按二进制处理，不做换行转换
+*.png binary
+*.webp binary
+*.jpg binary
+*.jpeg binary

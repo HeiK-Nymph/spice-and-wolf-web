@@ -1,0 +1,42 @@
+{
+  "style": "Anime illustration in the style of a 2024 Japanese TV anime remake, painterly cel-shaded rendering, soft warm amber candlelight, muted warm palette, gentle grain.",
+  "neg": "Absolutely no people, no characters, no faces, no hands, no silhouettes, no text, no letters, no numbers, no logos, no watermarks, no UI.",
+  "ref": "generated/refs/remake/s2-cover.jpg",
+  "assets": [
+    {
+      "name": "ledger-room",
+      "size": "1536x1024",
+      "transparent": false,
+      "quality": "medium",
+      "prompt": "Interior of a warm medieval European home at night, seen from a seated viewpoint. A rustic dark-wood desk in the lower foreground, a stone hearth with glowing embers to one side, heavy timber beams overhead, a small leaded window showing a cold blue winter night, dried herbs and a copper pot hanging in the background. The room is cozy, lived-in and calm. Leave the centre of the frame deliberately uncluttered and softly out of focus so text can be laid over it. Shallow depth of field, cinematic warm lighting."
+    },
+    {
+      "name": "ledger-paper",
+      "size": "1536x1024",
+      "transparent": false,
+      "quality": "medium",
+      "prompt": "Top-down flat scan of one large sheet of aged parchment paper used as a merchant ledger page. Warm cream and light tan tones, fine fibrous texture, faint tea-coloured stains and foxing near the edges, slightly irregular hand-torn edges, a soft single vertical fold crease. The sheet is completely blank. Even soft lighting, no hard shadows, generous empty space across the middle. Looks like real antique paper under warm lamplight."
+    },
+    {
+      "name": "obj-quill",
+      "size": "1024x1024",
+      "transparent": true,
+      "quality": "low",
+      "prompt": "A single white goose-feather quill pen resting beside a small dark ceramic inkwell holding a little black ink. Isolated still-life object on a fully transparent background, soft warm rim light from the upper left, subtle contact shadow only directly beneath the objects, muted colours."
+    },
+    {
+      "name": "obj-seal",
+      "size": "1024x1024",
+      "transparent": true,
+      "quality": "low",
+      "prompt": "A single dark red wax seal with a simple abstract wheat-sheaf emblem pressed into it, with a short frayed length of twine lying alongside. Isolated still-life object on a fully transparent background, soft warm rim light, subtle contact shadow only directly beneath, muted colours."
+    },
+    {
+      "name": "obj-candle",
+      "size": "1024x1024",
+      "transparent": true,
+      "quality": "low",
+      "prompt": "A single short beeswax candle burning in a small dented brass holder. Isolated still-life object on a fully transparent background, warm intimate glow, soft rim light, subtle contact shadow only directly beneath the holder, muted colours."
+    }
+  ]
+}
