@@ -180,14 +180,16 @@ const deskObjects: DeskObject[] = [
     id: 'spice',
     label: '香料',
     src: assetUrl('art/obj-spice.webp'),
+    to: '/game',
+    toLabel: '前往旅途牌局',
     x: 1.48,
     y: 0.4,
     scale: 0.2,
     rotate: 13,
     phone: { x: 0.3151, y: 0.49, scale: 0.122, rotate: 12 },
     preview: {
-      title: '香料袋',
-      body: '商路上常见的货色，价格随产地、季节和路途远近起落。',
+      title: '香料袋 · 旅途牌局',
+      body: '把袋子里的货色摊到桌上，相同的并作一处 —— 从帕斯罗村的一束麦子，一路攒到北方的同行者。',
     },
   },
   {
