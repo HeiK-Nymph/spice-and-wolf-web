@@ -39,6 +39,12 @@ const routes: RouteRecordRaw[] = [
     name: 'studio',
     component: () => import('@/views/StudioView.vue'),
     meta: { title: '画坊 · 绘图工作台' },
+  },
+  {
+    path: '/game',
+    name: 'game',
+    component: () => import('@/views/GameView.vue'),
+    meta: { title: '旅途牌局 · 2048' },
   }, // 旧站页面已废弃，统一回到旅途回忆录
   { path: '/characters', redirect: '/' },
   { path: '/anime', redirect: '/' },

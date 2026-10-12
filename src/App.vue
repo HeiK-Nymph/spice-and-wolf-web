@@ -17,7 +17,14 @@ const isMapRoute = computed(() => currentRoute.name === 'memoir')
 const hasOwnScene = computed(() => currentRoute.name === 'ledger')
 /** 画坊是一整块工具页：不要页脚、不要滚动马车、页面本身不滚动 */
 const isStudioRoute = computed(() => currentRoute.name === 'studio')
-const showScene = computed(() => !isMapRoute.value && !hasOwnScene.value)
+/**
+ * 牌局是【整屏内置游戏】：页头、页脚、滚动马车、全站视差背景一律不出现。
+ * 它自带的 3D 牌桌就是全部画面；退出口放在游戏自己的 HUD 里（GameView 的「旅途」）。
+ */
+const isGameRoute = computed(() => currentRoute.name === 'game')
+const showScene = computed(
+  () => !isMapRoute.value && !hasOwnScene.value && !isGameRoute.value,
+)
 
 /* 「翻开账本」过场：挂在 App 上，跳转时不会被打断 */
 const { opening, closeLedger } = useLedgerOpening()
@@ -32,14 +39,18 @@ function onLedgerOpened(): void {
 <template>
   <SceneBackground v-if="showScene" />
 
-  <ScrollCaravan v-if="!isMapRoute && !isStudioRoute" />
+  <ScrollCaravan v-if="!isMapRoute && !isStudioRoute && !isGameRoute" />
 
   <div
     class="app-shell"
-    :class="{ 'app-shell--map': isMapRoute, 'app-shell--studio': isStudioRoute }"
+    :class="{
+      'app-shell--map': isMapRoute,
+      'app-shell--studio': isStudioRoute,
+      'app-shell--game': isGameRoute,
+    }"
   >
     <a class="skip-link" href="#main">跳到主要内容</a>
-    <AppHeader />
+    <AppHeader v-if="!isGameRoute" />
 
     <main id="main" class="app-main">
       <RouterView v-slot="{ Component, route }">
@@ -49,7 +60,7 @@ function onLedgerOpened(): void {
       </RouterView>
     </main>
 
-    <AppFooter v-if="!isMapRoute && !isStudioRoute" />
+    <AppFooter v-if="!isMapRoute && !isStudioRoute && !isGameRoute" />
   </div>
 
   <LedgerOpenTransition :open="opening" @done="onLedgerOpened" />
@@ -70,6 +81,23 @@ function onLedgerOpened(): void {
 
 .app-shell--map {
   padding-bottom: 0;
+}
+
+/* 牌局：整屏游戏。撑满视口、禁止页面滚动，也不给橡皮筋/下拉刷新留机会 */
+.app-shell--game {
+  height: 100vh;
+  height: 100dvh;
+  min-height: 0;
+  padding-bottom: 0;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+.app-shell--game .app-main {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
 }
 
 /* 画坊：整页工具，撑满视口且禁止页面自身滚动（滚动交给各面板） */

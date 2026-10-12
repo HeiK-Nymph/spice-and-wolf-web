@@ -7,6 +7,7 @@ const navItems = [
   { to: '/market', label: '牌价板' },
   { to: '/studio', label: '画坊' },
   { to: '/ledger', label: '账本' },
+  { to: '/game', label: '牌局' },
 ]
 
 const route = useRoute()
